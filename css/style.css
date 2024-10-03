@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #888888;
+  }
+  
+  .tabbed-form{
+    width: 1000px;
+    height: fit-content;
+    background: #fff;
+    box-shadow: 0px 50px 6px -49px rgba(0,0,0,0.75);
+  }
+  
+  .form-titles{
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: #fff;
+  }
+  
+  .form-titles h2{
+    background: rgb(255,206,21);
+    background: linear-gradient(rgba(244,206,21,1) 0%,rgba(232,188,6,1) 100%);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #5c4905;
+  }
+  
+  .active-tab{
+    background: #fff !important;
+  }
+  
+  form{
+    width: 85%;
+    margin: 0 auto;
+    padding: 30px 10px;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .form-field {
+    flex: 1;
+    margin-right: 15px;
+  }
+  .form-field button{
+    flex: 0;
+  }
+  
+  .form-field:last-child {
+    margin-right: 0; /* Remove margem à direita do último campo */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form input{
+    display: block;
+    width: 40%;
+    margin: 4px auto;
+    padding: 8px 15px;
+    font-size: 15px;
+    border: 1px solid #eee;
+    outline: none;
+  }
+  
+  form input[type="radio"]{
+    width: 10%;
+    margin-right: 5px;
+  }
+  
+  form input:focus{
+    border-color: rgb(244,206,21);
+    box-shadow: 0 0 20px rgb(244,206,21);
+  }
+  
+  .submit-section{
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .submit-section button{
+    background: linear-gradient(rgba(244,206,21,1) 0%,rgba(232,188,6,1) 100%);
+    box-shadow: 0 0 1px #000;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .submit-section button:hover{
+    background: #ecd575;
+    cursor: pointer;
+  }
+  
+  #form-2, #form-3{
+    display: none;
+  }
+  
+  footer{
+    background: rgb(255,206,21);
+    background: linear-gradient(rgba(244,206,21,1) 0%,rgba(232,188,6,1) 100%);
+    padding: 20px;
+  }
