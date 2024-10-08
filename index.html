@@ -14,9 +14,8 @@
     <div class="form-titles">
       <h2 id="form-1-title" class="active-tab"> Dados Pessoais</h2>
       <h2 id="form-2-title">Endereço</h2>
-      <h2 id="form-3-title">Cartão</h2>
     </div>
-    <form id="form-1" method="ost">
+    <form id="form-1" method="post">
       <div class="pform-row">
         <div class="form-field">
           <label for="nome">Nome</label>
@@ -31,9 +30,11 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label>Gênero</label><br>
+          <label>Gênero</label>
+            <div class="form-row">
           <input type="radio" name="genero" id="masc" value="masculino" /> <span>Masculino</span>
           <input type="radio" name="genero" id="fem" value="feminino" /> <span>Feminino</span>
+            </div>
         </div>
 
         <div class="form-field">
@@ -44,9 +45,11 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label>Tipo do Telefone</label><br>
-          <input type="radio" name="tipoTelefone" id="sla1" value="masculino" /> <span>SLA</span>
-          <input type="radio" name="tipoTelefone" id="sla2" value="feminino" /> <span>SLA</span>
+          <label>Tipo do Telefone</label>
+            <div class="form-row">
+                <input type="radio" name="tipoTelefone" id="residencial" value="masculino" /> <span>Residencial</span>
+                <input type="radio" name="tipoTelefone" id="comercial" value="feminino" /> <span>Comercial</span>
+            </div>
         </div>
 
         <div class="form-field">
@@ -78,16 +81,23 @@
       <div class="form-row">
         <div class="form-field">
           <label for="cep">CEP</Label>
-          <input type="text" name="cep" id="cep" maxlength="10" required" />
-        </div>
-        <div class="form-field">
+          <input type="text" name="cep" id="cep" maxlength="10" required />
             <span id="message"></span>
             <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"><span>Não sei meu CEP</span></a>
         </div>
+          <div class="form-field">
+<div class="form-field">
+    <label>Tipo de Endereço</label>
+    <div class="form-row">
+        <input type="checkbox" name="tipoEndereco" id="entrega" value="entrega" /> <span>Entrega</span>
+        <input type="checkbox" name="tipoEndereco" id="cobranca" value="cobranca" /> <span>Cobrança</span>
+    </div>
+</div>
+          </div>
       </div>
       <div class="form-row">
-        <div class="form-field">
-            <label for="logradouro">Tipo Residencia</label>
+        <div class="form-field" style="display: flex; margin: 27px -300px 17px 1px;">
+            <label style="margin-right: 10px">Tipo Residencia</label>
             <select name="tiporesidencia" id="tiporesidencia">
                 <option value="casa">Casa</option>
                 <option value="apartamento">Apartamento</option>
@@ -129,35 +139,6 @@
           <input type="text" name="pais" id="pais">
         </div>
       </div>
-
-
-
-    </form>
-    <form id="form-3" method="post">
-        <div class="form-row">
-            <div class="form-field">
-                <label for="numCartao">Número do Cartão</label>
-                <input type="text" name="numCartao" id="numCartao" placeholder="Digite o numero do cartao">
-            </div>
-            <div class="form-field">
-                <label for="bandeira">Bandeira</label>
-                <input type="text" name="bandeira" id="bandeira">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-field">
-                <label for="nomeImpresso">Nome Impresso</label>
-                <input type="text" name="nomeImpresso" id="nomeImpresso">
-            </div>
-            <div class="form-field">
-                <label for="numSeguranca">Código de Segurança</label>
-                <input type="text" name="numSeguranca" id="numSeguranca">
-            </div>
-            <div class="form-field">
-                <input type="checkbox" name="preferencial" id="preferencial"> <span>Preferencial</span>
-            </div>
-        </div>
-      
     </form>
     <div class="submit-section">
       <button type="submit" onclick="enviarFormularios()">Submit</button>

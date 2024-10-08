@@ -50,7 +50,7 @@
   
   .form-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 20px;
   }
   
@@ -81,7 +81,7 @@
   form input{
     display: block;
     width: 40%;
-    margin: 4px auto;
+    margin: 4px;
     padding: 8px 15px;
     font-size: 15px;
     border: 1px solid #eee;
@@ -97,6 +97,8 @@
     border-color: rgb(244,206,21);
     box-shadow: 0 0 20px rgb(244,206,21);
   }
+
+
   
   .submit-section{
     background: #fff;
