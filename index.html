@@ -16,7 +16,7 @@
       <h2 id="form-2-title">Endereço</h2>
     </div>
     <form id="form-1" method="post">
-      <div class="pform-row">
+      <div class="form-row">
         <div class="form-field">
           <label for="nome">Nome</label>
           <input type="text" name="nome" id="nome" class="col" required />
@@ -47,8 +47,8 @@
         <div class="form-field">
           <label>Tipo do Telefone</label>
             <div class="form-row">
-                <input type="radio" name="tipoTelefone" id="residencial" value="masculino" /> <span>Residencial</span>
-                <input type="radio" name="tipoTelefone" id="comercial" value="feminino" /> <span>Comercial</span>
+                <input type="radio" name="tipoTelefone" id="residencial" value="residencial" /> <span>Residencial</span>
+                <input type="radio" name="tipoTelefone" id="comercial" value="comercial" /> <span>Comercial</span>
             </div>
         </div>
 
@@ -86,19 +86,19 @@
             <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"><span>Não sei meu CEP</span></a>
         </div>
           <div class="form-field">
-<div class="form-field">
-    <label>Tipo de Endereço</label>
-    <div class="form-row">
-        <input type="checkbox" name="tipoEndereco" id="entrega" value="entrega" /> <span>Entrega</span>
-        <input type="checkbox" name="tipoEndereco" id="cobranca" value="cobranca" /> <span>Cobrança</span>
-    </div>
-</div>
+        <div class="form-field">
+            <label>Tipo de Endereço</label>
+            <div class="form-row">
+                <input type="checkbox" name="tipoEndereco" id="entrega" value="entrega" /> <span>Entrega</span>
+                <input type="checkbox" name="tipoEndereco" id="cobranca" value="cobranca" /> <span>Cobrança</span>
+            </div>
+        </div>
           </div>
       </div>
       <div class="form-row">
         <div class="form-field" style="display: flex; margin: 27px -300px 17px 1px;">
             <label style="margin-right: 10px">Tipo Residencia</label>
-            <select name="tiporesidencia" id="tiporesidencia">
+            <select name="tipoResidencia" id="tipoResidencia">
                 <option value="casa">Casa</option>
                 <option value="apartamento">Apartamento</option>
                 <option value="condominio">Condomínio</option>
@@ -143,6 +143,8 @@
     <div class="submit-section">
       <button type="submit" onclick="enviarFormularios()">Submit</button>
     </div>
+
+
   </section>
   <footer></footer>
 

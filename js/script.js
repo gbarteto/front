@@ -37,15 +37,25 @@ formDoisbtn.addEventListener('click',function (){
     // Extrair dados do formulário 2 (endereços)
     const numero = form2.elements['numero'].value;
     const tipoResidencia = form2.elements['tipoResidencia'].value;
-    const tipoEndereco = form2.elements['tipoEndereco'].value;
-    const observacoes = form2.elements['observacoes'].value;
+
+    //verificando tipo endereço
+    const checkboxes = form2.elements['tipoEndereco'];
+    let tipoEndereco = '';
+    for (let i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        tipoEndereco = checkboxes[i].value;
+        break; // Pega apenas o primeiro checkbox marcado
+      }
+    }
+
+    const observacoes = form2.elements['complemento'].value;
     const cep = form2.elements['cep'].value;
     const logradouroCompleto = form2.elements['logradouro'].value;
     const tpLogradouro = logradouroCompleto.split(' ')[0]; // Pega a primeira palavra como tipo de logradouro
     const logradouro = logradouroCompleto.split(' ').slice(1).join(' '); // O resto da string é o nome do logradouro
     const bairro = form2.elements['bairro'].value;
     const cidade = form2.elements['cidade'].value;
-    const uf = form2.elements['uf'].value;
+    const uf = form2.elements['estado'].value;
     const pais = form2.elements['pais'].value;
 
     // Criar o objeto no formato JSON desejado
