@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #888888;
+    background-image: linear-gradient(135deg, #1B56A8 0%, #6819AC 100%);
   }
 
 form{
@@ -28,6 +28,7 @@ form{
   }
   
   .form-titles{
+    width: 100%;
     display: flex;
     position: sticky;
     top: 0;
@@ -40,7 +41,6 @@ form{
   
   .form-titles h2{
     background: rgb(255,206,21);
-    background: linear-gradient(rgba(244,206,21,1) 0%,rgba(232,188,6,1) 100%);
     width: 100%;
     text-align: center;
     align-items: center;
@@ -109,7 +109,7 @@ form{
   }
   
   .submit-section button{
-    background: linear-gradient(rgba(244,206,21,1) 0%,rgba(232,188,6,1) 100%);
+    background: rgb(244,206,21);
     box-shadow: 0 0 1px #000;
     border: none;
     outline: none;
@@ -121,7 +121,7 @@ form{
   }
   
   .submit-section button:hover{
-    background: #ecd575;
+    background: rgb(247, 226, 123);
     cursor: pointer;
   }
   
@@ -131,6 +131,42 @@ form{
   
   footer{
     background: rgb(255,206,21);
-    background: linear-gradient(rgba(244,206,21,1) 0%,rgba(232,188,6,1) 100%);
     padding: 20px;
   }
+
+  /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #FFCE15 #FFFFFF;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 1px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #FFCE15;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #E8BB13;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #E8BB13;
+}
