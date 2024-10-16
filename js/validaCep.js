@@ -96,4 +96,3 @@ document.getElementById('cep').addEventListener('focusout',()=>{
     console.log("CEP changed, searching...");
     pesquisacep(cep.value);
 })
-
