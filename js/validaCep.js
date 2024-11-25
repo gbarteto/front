@@ -1,4 +1,4 @@
-function limpa_formulário_cep() {
+function limpa_formulario_cep() {
     console.log("Clearing form values...");
     //Limpa valores do formulário de cep.
     console.log("Clearing logradouro");
@@ -32,7 +32,7 @@ function meu_callback(respostaCep) {
     else {
         console.log("CEP not found");
         //CEP não Encontrado.
-        limpa_formulário_cep();
+        limpa_formulario_cep();
         console.log("Showing alert CEP não encontrado.");
         alert("CEP não encontrado.");
     }
@@ -80,7 +80,7 @@ function pesquisacep(cep) {
         else {
             console.log("Invalid CEP format");
             //cep é inválido.
-            limpa_formulário_cep();
+            limpa_formulario_cep();
             console.log("Showing alert Formato de CEP inválido");
             alert("Formato de CEP inválido");
         }
@@ -88,9 +88,9 @@ function pesquisacep(cep) {
     else {
         console.log("No CEP value");
         //cep sem valor, limpa formulário.
-        limpa_formulário_cep();
+        limpa_formulario_cep();
     }
-};
+}
 
 document.getElementById('cep').addEventListener('focusout',()=>{
     console.log("CEP changed, searching...");

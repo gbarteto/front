@@ -111,6 +111,7 @@ form{
   .submit-section button{
     background: rgb(244,206,21);
     box-shadow: 0 0 1px #000;
+    border-radius: 8px;
     border: none;
     outline: none;
     font-size: 15px;
@@ -134,7 +135,65 @@ form{
     padding: 20px;
   }
 
-  /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+
+/* ------------- TELA DOS BOTOES -------------- */
+
+.container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.btn_inicio {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: rgb(244,206,21);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn_inicio:hover {
+  background-color: rgb(247,217,86);
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btnEnviar{
+  background-color: rgb(244,206,21);
+}
+.btnCadBandeira {
+  width: 135px;
+  background: rgb(244, 206, 21);
+  box-shadow: 0 0 1px #000;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
 /** {
   scrollbar-width: thin;
   scrollbar-color: #FFCE15 #FFFFFF;
