@@ -1,25 +1,20 @@
 // Obtenha os botões do título dos formulários
-const dadoPessoalBtn = document.getElementById("dados-pessoais-title");
-const enderecoBtn = document.getElementById("endereco-title");
 const cartaoBtn = document.getElementById("cartao-title");
 const bandeiraBtn = document.getElementById("bandeira-title");
 
 
-const dadoPessoal = document.getElementById("form-dados-pessoais");
-const endereco = document.getElementById("form-endereco");
 const cartao = document.getElementById("form-cartao");
 const bandeira = document.getElementById("form-bandeira");
 
-console.log(dadoPessoal);
-console.log(endereco);
+console.log(cartaoBtn);
+console.log(bandeiraBtn);
 console.log(cartao);
 console.log(bandeira);
 
 
-const manipulaForm = new ManipulaForm(dadoPessoalBtn, enderecoBtn, dadoPessoal, endereco);
-const manipulaFormCartao = new ManipulaForm(cartaoBtn, bandeiraBtn, cartao, bandeira);
-const manipulaDataForm = new ManipulaDataForm(dadoPessoal, endereco);
+const manipulaFormCartao = new ManipulaCartao(cartaoBtn, bandeiraBtn, cartao, bandeira);
 const manipulaDataFormCartao = new ManipulaDataFormCartao(cartao);
+const manipulaDataFormBandeira = new ManipulaDataFormBandeira(bandeira);
 
 
 

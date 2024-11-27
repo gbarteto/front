@@ -1,33 +1,24 @@
-class ManipulaDataFormCartao {
+class ManipulaDataFormBandeira {
     constructor(dadoCartaoForm) {
         // Guarda as referências dos formulários para dados pessoais e endereço
         this.dadoCartaoForm = dadoCartaoForm;
         // Chama o metodo que adiciona o evento de submit ao botão de envio
         this.adicionaEventoSubmit();
-        this.copiaEndereco();
     }
 
     adicionaEventoSubmit() {
         // Busca o botão de envio pelo ID 'submit-cartao'
-        const submitButton = document.getElementById('submit-cartao');
+        const submitButton = document.getElementById('submit-bandeira');
         if (submitButton) {
             // Adiciona o evento de clique ao botão para chamar o metodo `enviarFormularios`
-            submitButton.addEventListener('click', (event) => this.enviarFormularios(event));
+            submitButton.addEventListener('click', (event) => this.enviarFormulario(event));
         } else {
             console.error("Erro: Botão de submissão não encontrado.");
         }
     }
 
-    copiaEndereco(){
-        const copiaBtn = document.getElementById('sameAsDelivery')
-        if(copiaBtn){
-            copiaBtn.addEventListener('click', () => {
-                this.copiaDadosEndereco();
-            });
-        }
-    }
 
-    async enviarFormularios(event) {
+    async enviarFormulario(event) {
         // Previne o comportamento padrão do botão para evitar refresh da página
         //if (event) event.preventDefault();
 
@@ -35,22 +26,22 @@ class ManipulaDataFormCartao {
 
         try {
             // valida os dados do formulário de cartao usando os campos especificados
-            let camposObrigatorios = ["nCartao", "nomeCartao", "cpfCartao", "bandeira", "codSeguranca"];
+            let camposObrigatorios = ["criaBandeira"];
             let validacaoDadoPessoal = this.validaCamposObrigatorios(this.dadoCartaoForm, camposObrigatorios);
 
 
-            // Monta um objeto JSON para envio, adicionando o `ranking` e os `enderecosRelacionados`
-            const clienteJson = this.montaJson()
+            // Monta um objeto JSON para envio
+            const bandeiraJson = this.montaJson()
 
-            console.log("JSON gerado: ", JSON.stringify(clienteJson, null, 2));
+            console.log("JSON gerado: ", JSON.stringify(bandeiraJson, null, 2));
 
-            // Envia os dados para o servidor usando a API Fetch com uma requisição POST
-            const resposta = await fetch('http://localhost:8080/crud_v3_war_exploded/controlecliente', {
+            // Envia os dados para o servidor usando a API Fetch com uma requisição POST TODO: VERIFICAR LINK DE ENVIO
+            const resposta = await fetch('http://localhost:8080/crud_v3_war_exploded/controlecartao', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(clienteJson)
+                body: JSON.stringify(bandeiraJson)
             });
 
             // Recebe a resposta do servidor e a imprime
@@ -58,8 +49,9 @@ class ManipulaDataFormCartao {
 
             console.log('Success: ', dado);
         } catch (error) {
-            console.error('Exceção capturada: ', error);
-            alert("Falha ao enviar o formulário. Tente novamente.");
+            // Trata o erro capturado
+            console.error('Exceção capturada: ', error.message);
+            alert("Falha ao Cadastrar Bandeira. Tente novamente.");
         }
     }
 
@@ -91,17 +83,8 @@ class ManipulaDataFormCartao {
         // Retorne o JSON montado
 
         return {
-            Cartao:{
-                numero: this.dadoCartaoForm.elements['nCartao']?.value,
-                numSeguranca: this.dadoCartaoForm.elements['codSeguranca']?.value,
-                nomeImpresso: this.dadoCartaoForm.elements['nomeCartao']?.value,
-                preferencial: this.dadoCartaoForm.elements['preferencia']?.checked
-            },
             Bandeira: {
-                nomeBandeira: this.dadoCartaoForm.elements['bandeira']?.value
-            },
-            Cliente: {
-                cpf: this.dadoCartaoForm.elements['cpfCartao']?.value
+                nomeBandeira: this.dadoCartaoForm.elements['criaBandeira']?.value
             }
         }
     }
