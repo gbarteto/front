@@ -28,6 +28,21 @@ class ManipulaDataForm {
         }
     }
 
+    validaSenhasIguais() {
+        const senha = this.dadoPessoalForm.elements['senha']?.value;
+        const confirmarSenha = this.dadoPessoalForm.elements['confirmarSenha']?.value;
+
+        if (senha !== confirmarSenha) {
+            // Adiciona a classe 'error' aos campos de senha para indicar o erro
+            this.dadoPessoalForm.elements['senha']?.classList.add('error');
+            this.dadoPessoalForm.elements['confirmarSenha']?.classList.add('error');
+            alert('As senhas não são iguais. Por favor, verifique.');
+            return false; // Retorna falso se as senhas não são iguais
+        }
+        return true; // Retorna verdadeiro se as senhas são iguais
+    }
+
+
     async enviarFormularios(event) {
         // Previne o comportamento padrão do botão para evitar refresh da página
         //if (event) event.preventDefault();
@@ -35,6 +50,12 @@ class ManipulaDataForm {
         console.log('Enviando formulários...');
 
         try {
+            // Verifica se as senhas são iguais antes de enviar o formulário
+            const senhasIguais = this.validaSenhasIguais();
+            if (!senhasIguais) {
+                return; // Se as senhas não forem iguais, não continua com o envio
+            }
+
             // valida os dados do formulário de dados pessoais usando os campos especificados
             let camposObrigatorios = ["nome", "genero", "cpf", "tipoTelefone", "telefone", "email", "senha", "dataNascimento"];
             let validacaoDadoPessoal = this.validaCamposObrigatorios(this.dadoPessoalForm, camposObrigatorios);
