@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Inter, sans-serif;
   }
   
   html{
@@ -41,6 +42,7 @@ form{
   
   .form-titles h2{
     background: rgb(255,206,21);
+    font-weight: bold;
     width: 100%;
     text-align: center;
     align-items: center;
@@ -66,10 +68,11 @@ form{
   .form-field button{
     flex: 0;
   }
-  
+
   .form-field:last-child {
     margin-right: 0; /* Remove margem à direita do último campo */
   }
+
   
   input[type="text"],
   input[type="email"],
